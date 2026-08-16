@@ -1,0 +1,19 @@
+# Ayune Oráculos
+
+Ayune Oráculos oferece consultas místicas personalizadas de Tarô (online e presencial) e Cafeomancia (leitura milenar da borra do café de linhagem árabe, exclusivo presencial) conduzidas por Ayune em Curitiba, PR.
+
+## Páginas Disponíveis
+- **Página Inicial (Início):** Visão geral, biografia de Ayune, depoimentos de consulentes e informações gerais de contato.
+  - URL: https://ayuneoraculos.com.br/index.html
+- **Leitura de Tarô:** Métodos de tiragem (Mandala Astrológica, Templo de Afrodite), detalhes das consultas online por videochamada e sessões físicas.
+  - URL: https://ayuneoraculos.com.br/tarot.html
+- **Cafeomancia:** História do oráculo ancestral, ritual tradicional árabe de preparação e leitura dos símbolos na borra do café.
+  - URL: https://ayuneoraculos.com.br/cafeomancia.html
+- **Sintonização & Agendamento:** Questionário interativo pré-agendamento de 4 etapas focado na coleta de nome, nascimento, intenção e canalização da energia mística.
+  - URL: https://ayuneoraculos.com.br/agendamento.html
+
+## Informações de Contato e Localização
+- **Telefone/WhatsApp:** +55 41 99900-4131 (Apenas com horário marcado)
+- **Localização:** Curitiba, Paraná, Brasil
+- **Atendimento de Tarô:** Presencial (Curitiba) ou Online (Qualquer lugar do mundo por videochamada)
+- **Atendimento de Cafeomancia:** Apenas Presencial em Curitiba

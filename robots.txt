@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /agendamento.html
+
+Sitemap: https://ayuneoraculos.com.br/sitemap.xml

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayune Oráculos | Leituras Místicas, Tarô e Borra de Café</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3E2723">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubra clareza e direcionamento com Ayune Oráculos. Oferecemos leituras místicas de Tarô online e presencial, além da milenar leitura da borra de café (Cafeomancia) guiada pela sabedoria ancestral árabe. Agende sua consulta.">
+    <meta name="keywords" content="Tarô, Cafeomancia, leitura de borra de café, oráculo árabe, Tarô online, Tarô Curitiba, leitura de cartas, autoconhecimento, sabedoria ancestral, Ayune Oráculos">
+    <meta name="author" content="Ayune Oráculos">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ayuneoraculos.com.br/">
+
+    <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ayuneoraculos.com.br/">
+    <meta property="og:title" content="Ayune Oráculos | Leituras Místicas, Tarô e Borra de Café">
+    <meta property="og:description" content="Leituras místicas de Tarô online e Cafeomancia presencial. Descubra caminhos e clareza com a sabedoria ancestral árabe de Ayune.">
+    <meta property="og:image" content="https://ayuneoraculos.com.br/img/cafe_borra.jpeg">
+    <meta property="og:image:alt" content="Uma xícara com borra de café para leitura mística (Cafeomancia)">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Ayune Oráculos">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ayuneoraculos.com.br/">
+    <meta name="twitter:title" content="Ayune Oráculos | Leituras Místicas, Tarô e Borra de Café">
+    <meta name="twitter:description" content="Agende sua leitura mística de Tarô ou Cafeomancia presencial guiada pela sabedoria ancestral árabe.">
+    <meta name="twitter:image" content="https://ayuneoraculos.com.br/img/cafe_borra.jpeg">
+
+    <!-- Structured Data / Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Ayune Oráculos",
+      "image": "https://ayuneoraculos.com.br/img/cafe_borra.jpeg",
+      "description": "Leituras Místicas de Tarô online e Cafeomancia presencial com a tradição ancestral árabe de Ayune.",
+      "telephone": "+55-41-99900-4131",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Curitiba",
+        "addressRegion": "PR",
+        "addressCountry": "BR"
+      },
+      "url": "https://ayuneoraculos.com.br/",
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-900': '#3E2723', // Very dark roast
+                        'coffee-800': '#4E342E',
+                        'coffee-700': '#5D4037',
+                        'coffee-600': '#6D4C41',
+                        'coffee-500': '#795548', // Medium roast
+                        'coffee-400': '#8D6E63',
+                        'coffee-300': '#A1887F', // Milk coffee
+                        'coffee-200': '#BCAAA4',
+                        'coffee-100': '#D7CCC8', // Very light milk coffee
+                        'coffee-50': '#EFEBE9',  // Almost white, cream
+                        'gold-accent': '#D4AF37', // Gold for mystical touch
+                    },
+                    fontFamily: {
+                        'serif-title': ['Cinzel', 'serif'],
+                        'serif-body': ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background-color: #EFEBE9; /* coffee-50 */
+            color: #3E2723; /* coffee-900 */
+        }
+        h1, h2, h3, h4, .title-font {
+            font-family: 'Cinzel', serif;
+        }
+        /* Custom square button style */
+        .btn-square {
+            border-radius: 0 !important;
+        }
+        /* Hero section background pattern (subtle) */
+        .bg-pattern {
+            background-image: radial-gradient(#D7CCC8 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Strict square borders everywhere as requested */
+        * {
+            border-radius: 0 !important;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #EFEBE9; /* coffee-50 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8D6E63; /* coffee-400 */
+            border: 2px solid #EFEBE9;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5D4037; /* coffee-700 */
+        }
+
+        /* Firefox support */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #8D6E63 #EFEBE9;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <header class="bg-coffee-900 text-coffee-50 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold title-font tracking-widest text-gold-accent">AYUNE</a>
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gold-accent transition-colors">Início</a>
+                <a href="index.html#sobre" class="hover:text-gold-accent transition-colors">Sobre Mim</a>
+                <a href="tarot.html" class="hover:text-gold-accent transition-colors">Tarô</a>
+                <a href="cafeomancia.html" class="hover:text-gold-accent transition-colors">Cafeomancia</a>
+                <a href="#contato" class="hover:text-gold-accent transition-colors">Contato</a>
+            </nav>
+            <a href="agendamento.html" class="bg-gold-accent text-coffee-900 px-4 py-2 text-sm font-semibold uppercase tracking-wider hover:bg-coffee-100 hover:text-coffee-900 transition-colors border border-gold-accent btn-square hidden sm:block">
+                Agendar Agora
+            </a>
+            <!-- Mobile Menu Button (simplified for standard anchor links) -->
+            <button class="md:hidden text-coffee-50 hover:text-gold-accent focus:outline-none" aria-label="Abrir menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="bg-coffee-800 text-coffee-50 bg-pattern relative overflow-hidden">
+            <div class="absolute inset-0 bg-coffee-900 opacity-60"></div>
+            <div class="container mx-auto px-4 py-20 lg:py-32 relative z-10 flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 pr-0 lg:pr-10">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                        <span class="block text-gold-accent">Ayune:</span> Meus Olhos para o Seu Destino
+                    </h1>
+                    <p class="text-lg md:text-xl text-coffee-100 mb-8 max-w-lg italic">
+                        Leituras Místicas de Tarô e Borra de Café. Uma jornada de autoconhecimento guiada pela sabedoria ancestral árabe.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="agendamento.html" class="bg-gold-accent text-coffee-900 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white transition-colors border-2 border-gold-accent">
+                            Agendar Consulta
+                        </a>
+                        <a href="#servicos" class="bg-transparent border-2 border-coffee-300 text-coffee-100 px-8 py-4 text-center font-bold uppercase tracking-widest hover:border-gold-accent hover:text-gold-accent transition-colors">
+                            Conhecer Serviços
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full">
+                    <!-- Placeholder for mystic/coffee image, using CSS to style a box for now to avoid external image dependencies breaking -->
+                    <div class="aspect-square bg-coffee-700 border-4 border-gold-accent p-2 shadow-2xl mx-auto max-w-md relative">
+                        <div class="w-full h-full border-2 border-coffee-400 bg-cover bg-center mix-blend-luminosity opacity-80" style="background-image: url('img/cafe_borra.jpeg')"></div>
+                        <div class="absolute inset-0 bg-coffee-900 opacity-40 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="py-20 bg-coffee-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-coffee-900 mb-6 uppercase tracking-wider">A Tradição de Ayune</h2>
+                    <div class="w-24 h-1 bg-gold-accent mx-auto mb-8"></div>
+                    <p class="text-xl text-coffee-700 leading-relaxed">
+                        "Ayune", que significa "meus olhos" em árabe, reflete a minha missão: lançar um olhar profundo sobre as questões da sua vida.
+                    </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-5/12 w-full">
+                         <div class="aspect-[3/4] bg-coffee-200 border-l-8 border-gold-accent overflow-hidden relative">
+                             <img src="img/ayune.jpeg" alt="Ayune - Dança Árabe e Tradição" class="w-full h-full object-cover opacity-95">
+                         </div>
+                    </div>
+                    <div class="md:w-7/12 w-full">
+                        <h3 class="text-2xl font-bold text-coffee-800 mb-4 title-font">Raízes Ancestrais</h3>
+                        <p class="text-coffee-600 mb-6 leading-relaxed">
+                            Descendente de uma família árabe tradicional, aprendi as danças árabes e o oráculo da leitura ainda menina. Estes saberes não foram apenas estudados, mas vividos e transmitidos de geração em geração, correndo em minhas veias.
+                        </p>
+                        <p class="text-coffee-600 mb-6 leading-relaxed">
+                            Hoje, dedico-me a perpetuar essas tradições milenares que me foram confiadas por meus ancestrais. Faço isso através da profunda arte da leitura da borra de café, do Tarô e da expressão corporal da dança oriental árabe.
+                        </p>
+                        <p class="text-coffee-800 font-semibold italic border-l-4 border-coffee-400 pl-4 py-2 bg-white">
+                            Minha leitura é um encontro com a sua própria essência, guiada pela sabedoria do oriente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="py-20 bg-coffee-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-coffee-900 mb-6 uppercase tracking-wider">Oráculos e Leituras</h2>
+                    <div class="w-24 h-1 bg-coffee-800 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Service 1: Tarot -->
+                    <div class="bg-white border-t-4 border-gold-accent p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                        <div class="mb-6 flex justify-center">
+                            <div class="w-16 h-16 bg-coffee-50 border border-coffee-200 flex items-center justify-center overflow-hidden">
+                                <img src="img/leitura-tarot.jpg" alt="Leitura de Tarô" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center text-coffee-900 mb-4 title-font">Leitura de Tarô</h3>
+                        <div class="flex justify-center gap-2 mb-6">
+                            <span class="bg-coffee-200 text-coffee-800 text-xs px-3 py-1 font-bold tracking-wide uppercase">Online</span>
+                            <span class="bg-coffee-200 text-coffee-800 text-xs px-3 py-1 font-bold tracking-wide uppercase">Presencial</span>
+                        </div>
+                        <p class="text-coffee-600 text-center flex-grow mb-8">
+                            Aconselhamento e direcionamento através dos arcanos. Ideal para clareza em decisões, questões afetivas, profissionais e espirituais. Realizado com seriedade e respeito ao seu momento.
+                        </p>
+                        <div class="flex flex-col gap-2 w-full">
+                            <a href="tarot.html" class="block w-full bg-coffee-800 text-coffee-50 py-3 text-center font-semibold uppercase tracking-wider hover:bg-coffee-900 transition-colors border border-coffee-900">
+                                Conhecer a Leitura
+                            </a>
+                            <a href="agendamento.html?service=tarot-online" class="block w-full bg-transparent border-2 border-coffee-900 text-coffee-900 py-3 text-center font-semibold uppercase tracking-wider hover:bg-coffee-900 hover:text-coffee-50 transition-colors">
+                                Agendar Tarô
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Cafeomancia -->
+                    <div class="bg-white border-t-4 border-coffee-800 p-8 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full relative overflow-hidden">
+                        <!-- Decorative background element for Cafeomancia -->
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-coffee-100 rounded-full opacity-50 mix-blend-multiply pointer-events-none" style="border-radius: 50% !important;"></div>
+                        
+                        <div class="mb-6 flex justify-center relative z-10">
+                            <div class="w-16 h-16 bg-coffee-800 border border-coffee-900 flex items-center justify-center overflow-hidden">
+                                <img src="img/cafeomancia.jpg" alt="Cafeomancia" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center text-coffee-900 mb-4 title-font relative z-10">Cafeomancia</h3>
+                        <p class="text-center text-sm text-coffee-500 mb-2 font-bold uppercase tracking-wide">(Leitura de Borra de Café)</p>
+                        <div class="flex justify-center gap-2 mb-6 relative z-10">
+                            <span class="bg-coffee-800 text-gold-accent text-xs px-3 py-1 font-bold tracking-wide uppercase border border-gold-accent">Exclusivo Presencial</span>
+                        </div>
+                        <p class="text-coffee-600 text-center flex-grow mb-8 relative z-10">
+                            A milenar tradição árabe de interpretar os símbolos formados pela borra do café. Uma experiência íntima e reveladora, que conecta o momento presente com as tendências do futuro.
+                        </p>
+                        <div class="flex flex-col gap-2 relative z-10 w-full">
+                            <a href="cafeomancia.html" class="block w-full bg-coffee-800 text-coffee-50 py-3 text-center font-semibold uppercase tracking-wider hover:bg-coffee-900 transition-colors border border-coffee-900">
+                                Conhecer o Ritual
+                            </a>
+                            <a href="agendamento.html?service=cafeomancia" class="block w-full bg-transparent border-2 border-coffee-900 text-coffee-900 py-3 text-center font-semibold uppercase tracking-wider hover:bg-coffee-900 hover:text-coffee-50 transition-colors">
+                                Agendar Cafeomancia
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-20 bg-coffee-900 text-coffee-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto border border-coffee-700 bg-coffee-800 p-8 md:p-12 shadow-2xl">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gold-accent mb-4 uppercase tracking-wider">Agende Sua Consulta</h2>
+                        <p class="text-coffee-200">Entre em contato para verificar horários disponíveis para sessões online de Tarô ou sessões presenciais de Cafeomancia e Tarô.</p>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-10 items-center justify-center">
+                        <div class="flex-1 text-center md:text-right border-b md:border-b-0 md:border-r border-coffee-600 pb-8 md:pb-0 md:pr-10">
+                            <h4 class="text-xl font-semibold title-font mb-2">WhatsApp Direto</h4>
+                            <p class="text-3xl font-bold text-white tracking-wider mb-2">41 99900-4131</p>
+                            <p class="text-sm text-coffee-300 uppercase tracking-wide">Atendimento com horário marcado</p>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                              <a href="agendamento.html" class="inline-flex items-center justify-center gap-3 bg-coffee-900 text-gold-accent border-2 border-gold-accent px-8 py-4 font-bold uppercase tracking-widest hover:bg-gold-accent hover:text-coffee-900 transition-colors w-full md:w-auto shadow-lg">
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937 0 3.825-3.113 6.938-6.938 6.938z"/>
+                                 </svg>
+                                 Iniciar Agendamento
+                             </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-coffee-900 border-t border-coffee-800 py-8 text-center text-coffee-400 text-sm">
+        <div class="container mx-auto px-4">
+            <p class="font-bold title-font text-gold-accent mb-2 text-lg">AYUNE</p>
+            <p>Leituras Místicas, Tarô e Borra de Café</p>
+            <p class="mt-4">© <script>document.write(new Date().getFullYear())</script> Ayune Oráculos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registrado:', reg.scope))
+                    .catch(err => console.log('Erro Service Worker:', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Agendamento | Ayune Oráculos</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3E2723">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prepare-se para sua consulta com Ayune. Preencha nosso questionário pré-agendamento para sintonizar suas energias e direcionar sua leitura de Tarô ou Cafeomancia.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-900': '#3E2723',
+                        'coffee-800': '#4E342E',
+                        'coffee-700': '#5D4037',
+                        'coffee-600': '#6D4C41',
+                        'coffee-500': '#795548',
+                        'coffee-400': '#8D6E63',
+                        'coffee-300': '#A1887F',
+                        'coffee-200': '#BCAAA4',
+                        'coffee-100': '#D7CCC8',
+                        'coffee-50': '#EFEBE9',
+                        'gold-accent': '#D4AF37',
+                    },
+                    fontFamily: {
+                        'serif-title': ['Cinzel', 'serif'],
+                        'serif-body': ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background-color: #EFEBE9; /* coffee-50 */
+            color: #3E2723; /* coffee-900 */
+        }
+        h1, h2, h3, h4, .title-font {
+            font-family: 'Cinzel', serif;
+        }
+        .btn-square {
+            border-radius: 0 !important;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#D7CCC8 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        * {
+            border-radius: 0 !important;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #EFEBE9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8D6E63;
+            border: 2px solid #EFEBE9;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5D4037;
+        }
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #8D6E63 #EFEBE9;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <header class="bg-coffee-900 text-coffee-50 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold title-font tracking-widest text-gold-accent hover:opacity-95 transition-opacity">AYUNE</a>
+            <a href="index.html" class="border border-gold-accent text-gold-accent px-4 py-2 text-sm font-semibold uppercase tracking-wider hover:bg-gold-accent hover:text-coffee-900 transition-colors btn-square">
+                Voltar
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center py-12 bg-pattern relative overflow-hidden">
+        <div class="absolute inset-0 bg-coffee-900 opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl mx-auto bg-white border border-coffee-200 p-8 md:p-12 shadow-2xl">
+                
+                <!-- Stepper Progress -->
+                <div class="mb-10">
+                    <div class="flex justify-between items-center text-xs uppercase tracking-widest text-coffee-400 font-semibold mb-2">
+                        <span>Sintonização de Energia</span>
+                        <span id="step-indicator">Passo 1 de 4</span>
+                    </div>
+                    <div class="w-full bg-coffee-100 h-1">
+                        <div id="progress-bar" class="bg-gold-accent h-1 transition-all duration-300" style="width: 25%;"></div>
+                    </div>
+                </div>
+
+                <!-- Promotional Incentive -->
+                <div class="mb-8 bg-coffee-50 border-l-4 border-gold-accent p-4 text-sm text-coffee-800">
+                    <strong>Presente de Boas-Vindas:</strong> Ao concluir esta sintonização, você garantirá uma <strong>Carta de Conselho do Tarô Gratuita</strong> para a sua semana junto com o seu agendamento!
+                </div>
+
+                <!-- Form Questionnaire -->
+                <form id="booking-form" onsubmit="handleSubmit(event)">
+                    
+                    <!-- Step 1: Personal Info -->
+                    <div id="step-1" class="form-step">
+                        <h2 class="text-2xl font-bold text-coffee-900 mb-6 title-font">1. Quem é você?</h2>
+                        <p class="text-sm text-coffee-600 mb-6 italic border-l-2 border-gold-accent pl-3">
+                            A leitura dos oráculos começa pela identificação e conexão da sua data de nascimento com a energia astral.
+                        </p>
+                        <div class="space-y-6">
+                            <div>
+                                <label for="fullname" class="block text-sm font-bold text-coffee-800 uppercase tracking-wider mb-2">Nome Completo</label>
+                                <input type="text" id="fullname" required class="w-full bg-coffee-50 border border-coffee-200 p-3 focus:outline-none focus:border-gold-accent text-coffee-900" placeholder="Digite seu nome completo">
+                            </div>
+                            <div>
+                                <label for="birthdate" class="block text-sm font-bold text-coffee-800 uppercase tracking-wider mb-2">Data de Nascimento</label>
+                                <input type="date" id="birthdate" required class="w-full bg-coffee-50 border border-coffee-200 p-3 focus:outline-none focus:border-gold-accent text-coffee-900">
+                                <span class="text-xs text-coffee-500 mt-1 block">Seus dados de nascimento são sagrados e utilizados exclusivamente para sintonizar a energia do oráculo.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Service Selection -->
+                    <div id="step-2" class="form-step hidden">
+                        <h2 class="text-2xl font-bold text-coffee-900 mb-6 title-font">2. O Oráculo Desejado</h2>
+                        <p class="text-sm text-coffee-600 mb-6 italic border-l-2 border-gold-accent pl-3">
+                            Selecione o ritual que você sente que mais se alinha com o seu momento atual.
+                        </p>
+                        <div class="space-y-4">
+                            <label class="block border border-coffee-200 p-4 hover:border-gold-accent cursor-pointer transition-colors bg-coffee-50" id="label-tarot-online">
+                                <div class="flex items-start gap-3">
+                                    <input type="radio" name="service" value="Leitura de Tarô (Online)" required class="mt-1 accent-gold-accent" checked>
+                                    <div>
+                                        <span class="font-bold text-coffee-900 uppercase tracking-wider text-sm block">Leitura de Tarô (Online)</span>
+                                        <span class="text-xs text-coffee-600 block mt-1">Realizado por videochamada. Ideal para direcionamento prático no conforto do seu lar.</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="block border border-coffee-200 p-4 hover:border-gold-accent cursor-pointer transition-colors bg-coffee-50" id="label-tarot-presencial">
+                                <div class="flex items-start gap-3">
+                                    <input type="radio" name="service" value="Leitura de Tarô (Presencial)" class="mt-1 accent-gold-accent">
+                                    <div>
+                                        <span class="font-bold text-coffee-900 uppercase tracking-wider text-sm block">Leitura de Tarô (Presencial)</span>
+                                        <span class="text-xs text-coffee-600 block mt-1">Sessão presencial física em Curitiba, com conexão direta das cartas e ambiente preparado.</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="block border border-coffee-200 p-4 hover:border-gold-accent cursor-pointer transition-colors bg-coffee-50" id="label-cafeomancia">
+                                <div class="flex items-start gap-3">
+                                    <input type="radio" name="service" value="Cafeomancia (Presencial)" class="mt-1 accent-gold-accent">
+                                    <div>
+                                        <span class="font-bold text-coffee-900 uppercase tracking-wider text-sm block">Cafeomancia (Exclusivo Presencial)</span>
+                                        <span class="text-xs text-coffee-600 block mt-1">Leitura da borra do café árabe. Ritual físico focado em símbolos e ancestralidade.</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Intent and Focus -->
+                    <div id="step-3" class="form-step hidden">
+                        <h2 class="text-2xl font-bold text-coffee-900 mb-6 title-font">3. O Foco da Consulta</h2>
+                        <p class="text-sm text-coffee-600 mb-6 italic border-l-2 border-gold-accent pl-3">
+                            Em qual área da sua vida você necessita de maior clareza e revelações neste momento?
+                        </p>
+                        <div class="space-y-6">
+                            <div>
+                                <label for="focus" class="block text-sm font-bold text-coffee-800 uppercase tracking-wider mb-2">Área de Foco</label>
+                                <select id="focus" required class="w-full bg-coffee-50 border border-coffee-200 p-3 focus:outline-none focus:border-gold-accent text-coffee-900">
+                                    <option value="Autoconhecimento e Direcionamento Geral">Autoconhecimento e Direcionamento Geral</option>
+                                    <option value="Amor e Relacionamentos afetivos">Amor e Relacionamentos afetivos</option>
+                                    <option value="Trabalho, Carreira e Finanças">Trabalho, Carreira e Finanças</option>
+                                    <option value="Tomada de Decisão Importante">Tomada de Decisão Importante</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="details" class="block text-sm font-bold text-coffee-800 uppercase tracking-wider mb-2">Sua Principal Questão / Intenção</label>
+                                <textarea id="details" required rows="3" class="w-full bg-coffee-50 border border-coffee-200 p-3 focus:outline-none focus:border-gold-accent text-coffee-900" placeholder="Escreva resumidamente a dúvida que deseja solucionar ou qual intenção traz para esta leitura..."></textarea>
+                                <span class="text-xs text-coffee-500 mt-1 block">Seu relato é confidencial. Suas questões são tratadas com absoluto sigilo e respeito.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Finalization & Pre-requisites -->
+                    <div id="step-4" class="form-step hidden">
+                        <h2 class="text-2xl font-bold text-coffee-900 mb-6 title-font">4. Sintonização Final</h2>
+                        <p class="text-sm text-coffee-600 mb-6 italic border-l-2 border-gold-accent pl-3">
+                            Responda esta última questão para alinhar a condução da sessão.
+                        </p>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-bold text-coffee-800 uppercase tracking-wider mb-2">Você já realizou leituras de oráculos anteriormente?</label>
+                                <div class="flex gap-6 mt-2">
+                                    <label class="flex items-center gap-2 cursor-pointer text-coffee-900">
+                                        <input type="radio" name="previous_reading" value="Sim" checked class="accent-gold-accent"> Sim
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-coffee-900">
+                                        <input type="radio" name="previous_reading" value="Não" class="accent-gold-accent"> Não
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="border-t border-coffee-100 pt-6">
+                                <p class="text-xs text-coffee-500 leading-relaxed">
+                                    Ao enviar este questionário, os dados informados serão empacotados em uma mensagem e você será redirecionado para o WhatsApp de Ayune para escolher o melhor horário e receber sua recompensa.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-between items-stretch sm:items-center mt-10 border-t border-coffee-100 pt-6">
+                        <button type="button" id="prev-btn" onclick="prevStep()" class="bg-transparent border border-coffee-400 text-coffee-800 px-6 py-3 font-semibold uppercase tracking-wider hover:bg-coffee-50 transition-colors btn-square opacity-0 pointer-events-none w-full sm:w-auto order-2 sm:order-1">
+                            Voltar
+                        </button>
+                        <button type="button" id="next-btn" onclick="nextStep()" class="bg-coffee-900 text-white px-8 py-3 font-bold uppercase tracking-widest hover:bg-coffee-800 transition-colors btn-square w-full sm:w-auto order-1 sm:order-2">
+                            Avançar
+                        </button>
+                        <button type="submit" id="submit-btn" class="bg-coffee-900 text-gold-accent border-2 border-gold-accent px-8 py-3 font-bold uppercase tracking-widest hover:bg-gold-accent hover:text-coffee-900 transition-colors btn-square hidden w-full sm:w-auto order-1 sm:order-2">
+                            Iniciar Sintonização e Agendar
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-coffee-900 py-6 text-center text-coffee-400 text-xs">
+        <div class="container mx-auto px-4">
+            <p>© 2026 Ayune Oráculos. Conexão mística e ancestralidade.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Auto-select service based on URL parameter if present (e.g. ?service=cafeomancia)
+        window.addEventListener('DOMContentLoaded', () => {
+            const preselectedService = getQueryParam('service');
+            if (preselectedService === 'cafeomancia') {
+                const radio = document.querySelector('input[name="service"][value="Cafeomancia (Presencial)"]');
+                if (radio) radio.checked = true;
+            } else if (preselectedService === 'tarot-presencial') {
+                const radio = document.querySelector('input[name="service"][value="Leitura de Tarô (Presencial)"]');
+                if (radio) radio.checked = true;
+            } else if (preselectedService === 'tarot-online') {
+                const radio = document.querySelector('input[name="service"][value="Leitura de Tarô (Online)"]');
+                if (radio) radio.checked = true;
+            }
+        });
+
+        function updateStep() {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById(`step-${i}`).classList.add('hidden');
+            }
+            // Show current step
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+            // Update step indicator and progress bar
+            document.getElementById('step-indicator').innerText = `Passo ${currentStep} de ${totalSteps}`;
+            document.getElementById('progress-bar').style.width = `${(currentStep / totalSteps) * 100}%`;
+
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (currentStep === 1) {
+                prevBtn.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                prevBtn.classList.remove('opacity-0', 'pointer-events-none');
+            }
+
+            if (currentStep === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function validateCurrentStep() {
+            if (currentStep === 1) {
+                const fullname = document.getElementById('fullname');
+                const birthdate = document.getElementById('birthdate');
+                if (!fullname.value.trim() || !birthdate.value) {
+                    fullname.reportValidity();
+                    birthdate.reportValidity();
+                    return false;
+                }
+            } else if (currentStep === 3) {
+                const details = document.getElementById('details');
+                if (!details.value.trim()) {
+                    details.reportValidity();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function nextStep() {
+            if (validateCurrentStep()) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateStep();
+                }
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStep();
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('fullname').value;
+            
+            // Format Birthdate to pt-BR format (DD/MM/AAAA)
+            const rawDate = document.getElementById('birthdate').value;
+            const dateParts = rawDate.split('-');
+            const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+
+            const service = document.querySelector('input[name="service"]:checked').value;
+            const focus = document.getElementById('focus').value;
+            const details = document.getElementById('details').value;
+            const previous = document.querySelector('input[name="previous_reading"]:checked').value;
+
+            // Build the WhatsApp message
+            const message = `Olá, Ayune! Gostaria de realizar o agendamento de uma consulta. Preenchi o questionário prévio de sintonização com meus dados:\n\n` +
+                            `*Ficha de Sintonização de Energia*\n\n` +
+                            `*Nome:* ${name}\n` +
+                            `*Nascimento:* ${formattedDate}\n` +
+                            `*Oráculo:* ${service}\n` +
+                            `*Foco:* ${focus}\n` +
+                            `*Principal questão:* "${details}"\n` +
+                            `*Já jogou oráculos antes?* ${previous}\n\n` +
+                            `Fico no aguardo para confirmarmos o melhor dia e horário!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/5541999004131?text=${encodedMessage}`;
+            
+            // Redirect to WhatsApp
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registrado:', reg.scope))
+                    .catch(err => console.log('Erro Service Worker:', err));
+            });
+        }
+    </script>
+</body>
+</html>
