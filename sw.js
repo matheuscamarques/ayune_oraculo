@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayune-oraculos-v6';
+const CACHE_NAME = 'ayune-oraculos-v7';
 const ASSETS = [
   './',
   './index.html',

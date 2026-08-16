@@ -10,6 +10,22 @@
 
       gtag('config', 'G-YX5SDYB2M6');
     </script>
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18393340685/xnlqCMT43OIcEI220MJE',
+          'value': 1.0,
+          'currency': 'BRL',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionário de Agendamento | Ayune Oráculos</title>
@@ -382,8 +398,8 @@
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/5541999004131?text=${encodedMessage}`;
             
-            // Redirect to WhatsApp
-            window.open(whatsappUrl, '_blank');
+            // Track conversion and redirect to WhatsApp
+            gtag_report_conversion(whatsappUrl);
         }
 
         // Register Service Worker
