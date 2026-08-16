@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ayune-oraculos-v3';
+const CACHE_NAME = 'ayune-oraculos-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const ASSETS = [
   './cafeomancia.html',
   './agendamento.html',
   './manifest.json',
+  './img/logo.png',
   './img/cafe_borra.jpeg',
   './img/ayune.jpeg',
   './img/leitura-tarot.jpg',
