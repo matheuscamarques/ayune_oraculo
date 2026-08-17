@@ -1,10 +1,11 @@
-const CACHE_NAME = 'ayune-oraculos-v7';
+const CACHE_NAME = 'ayune-oraculos-v8';
 const ASSETS = [
   './',
   './index.html',
   './tarot.html',
   './cafeomancia.html',
   './agendamento.html',
+  './cookie-consent.js',
   './manifest.json',
   './favicon.ico',
   './img/logo.png',

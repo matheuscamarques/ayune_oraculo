@@ -6,11 +6,30 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      
+      // Configurar consentimento padrão com base no localStorage (Google Consent Mode v2)
+      const savedConsent = localStorage.getItem('cookie-consent');
+      if (savedConsent === 'accepted') {
+        gtag('consent', 'default', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      } else {
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+      }
 
+      gtag('js', new Date());
       gtag('config', 'G-YX5SDYB2M6');
       gtag('config', 'AW-18393340685');
     </script>
+    <script src="cookie-consent.js" defer></script>
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {
